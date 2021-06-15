@@ -1,0 +1,10 @@
+I want to create a Team
+I want to add players to that Team
+Team belongs to the Sunday Club
+
+
+
+Stretch Goals:
+Division Link + Comparision to other Teams In Division
+Have Stats present on Profile Page
+Add Team Colors to Profile Page, change look of background
