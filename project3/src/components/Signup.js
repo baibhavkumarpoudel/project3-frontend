@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Player from "./Player"
 
 class Signup extends Component {
     constructor() {
@@ -25,6 +26,7 @@ class Signup extends Component {
                     <input type="text" name="img" placeholder="Photo"/><br></br>
                     <h2>Pick your Primary Team Color</h2>
                     <input type="color" name="color1" placeholder="Primary Team Color"/><br></br>
+                    <Player /><br></br>
                     <input type="submit" value="Submit" />
                 </form>
             </div>
