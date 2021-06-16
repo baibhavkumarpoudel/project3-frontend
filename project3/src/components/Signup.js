@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, {Component} from "react";
 import Player from "./Player"
 
@@ -14,18 +15,41 @@ class Signup extends Component {
             }
         }
     }
+
+    handleChange = (event) => {
+        this.setState(prevState => ({
+            data: {
+                ...prevState.data,
+                [event.target.name]: event.target.value
+            }
+        }))
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        axios.post("http://localhost:3001/auth/signup", this.state.data)
+        .then(resp => {
+            console.log("Team Created")
+            console.log(resp)
+            this.props.history.push(`/profile/${resp.data.user.id}`)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
     render() {
         return (
             <div>
                 <h1>Sign Up</h1>
-                <form>
-                    <input type="text" name="username" placeholder="Username"/><br></br>
-                    <input type="password" name="password" placeholder="Password"/><br></br>
-                    <input type="text" name="name" placeholder="Team Name"/><br></br>
-                    <input type="text" name="division" placeholder="Division"/><br></br>
-                    <input type="text" name="img" placeholder="Photo"/><br></br>
+                <form onSubmit={this.handleSubmit}>
+                    <input onChange={this.handleChange} type="text" name="username" placeholder="Username"/><br></br>
+                    <input onChange={this.handleChange} type="password" name="password" placeholder="Password"/><br></br>
+                    <input onChange={this.handleChange} type="text" name="name" placeholder="Team Name"/><br></br>
+                    <input onChange={this.handleChange} type="text" name="division" placeholder="Division"/><br></br>
+                    <input onChange={this.handleChange} type="text" name="img" placeholder="Photo"/><br></br>
                     <h2>Pick your Primary Team Color</h2>
-                    <input type="color" name="color1" placeholder="Primary Team Color"/><br></br>
+                    <input onChange={this.handleChange} type="color" name="color1" placeholder="Primary Team Color"/><br></br>
                     <Player /><br></br>
                     <input type="submit" value="Submit" />
                 </form>
