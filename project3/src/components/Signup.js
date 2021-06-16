@@ -27,7 +27,7 @@ class Signup extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post("http://localhost:3001/auth/signup", this.state.data)
+        axios.post("http://localhost:3000/auth/signup", this.state.data)
         .then(resp => {
             console.log("Team Created")
             console.log(resp)
@@ -50,7 +50,7 @@ class Signup extends Component {
                     <input onChange={this.handleChange} type="text" name="img" placeholder="Photo"/><br></br>
                     <h2>Pick your Primary Team Color</h2>
                     <input onChange={this.handleChange} type="color" name="color1" placeholder="Primary Team Color"/><br></br>
-                    <Player /><br></br>
+                    {/* <Player /><br></br> */}
                     <input type="submit" value="Submit" />
                 </form>
             </div>
