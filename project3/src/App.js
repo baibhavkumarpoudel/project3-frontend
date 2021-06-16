@@ -12,10 +12,10 @@ function App() {
   return (
     <div className="App">
       <Route path='/' exact render={() => <Home />}/>
-      <Route path='/signup' render={() => <Signup />}/>
-      <Route path='/login' render={() => <Login />}/>
+      <Route path='/signup' render={(props) => <Signup {...props} />}/>
+      <Route path='/login' render={(props) => <Login {...props} />}/>
       <Route path='/profile' render={() => <Profile />}/>
-      <Route path='/player' render={() => <Player />}/>
+      <Route path='/player' render={(props) => <Player {...props} />}/>
     </div>
   );
 }

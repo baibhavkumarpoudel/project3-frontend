@@ -5,7 +5,7 @@ class Player extends Component {
     constructor(props) {
         super(props)
         this.state= {
-            data: {
+            player: {
                 name: "",
                 age: "",
                 position: "",
