@@ -1,8 +1,9 @@
 import React, {Component} from "react";
+import axios from "axios";
 
 class Player extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state= {
             data: {
                 name: "",
@@ -32,7 +33,7 @@ class Player extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.put(`http://localhost:3001/player/${this.props.match.params.id}`, this.state.city)
+        axios.put(`http://localhost:3001/player/${this.props.match.params.id}`, this.state.player)
         .then(response => {
             console.log("Editing Player")
         })
@@ -41,7 +42,7 @@ class Player extends Component {
     handleDelete = (event) => {
         event.preventDefault()
         axios.delete(`http://localhost:3001/player/${this.props.match.params.id}`)
-        .then(() => {
+        .then((props) => {
             console.log("Deleting Player");
             this.props.history.push(`/profile`)
         })
@@ -51,13 +52,13 @@ class Player extends Component {
         return (
             <div>
                 <h1>Add Player</h1>
-                <form onSubmit={props.handleSubmit}>
-                    <input onChange={props.handleChange} type="text" name="name" placeholder="Player Name"/><br></br>
-                    <input onChange={props.handleChange} type="text" name="age" placeholder="Age"/><br></br>
-                    <input onChange={props.handleChange} type="text" name="position" placeholder="Position"/><br></br>
+                <form onSubmit={this.handleSubmit}>
+                    <input onChange={this.handleChange} type="text" name="name" placeholder="Player Name"/><br></br>
+                    <input onChange={this.handleChange} type="text" name="age" placeholder="Age"/><br></br>
+                    <input onChange={this.handleChange} type="text" name="position" placeholder="Position"/><br></br>
                     <input type="submit" value="Submit" />
                 </form>
-                <button onClick={props.handleDelete}>Delete Player</button>
+                <button onClick={this.handleDelete}>Delete Player</button>
             </div>
         )
     }
