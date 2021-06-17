@@ -28,7 +28,7 @@ class Signup extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         console.log("I push a button lol")
-        axios.post("https://localhost:3001/auth/signup", this.state.data)
+        axios.post("http://localhost:3001/auth/signup", this.state.data)
         .then(resp => {
             console.log("Team Created")
             console.log(resp)

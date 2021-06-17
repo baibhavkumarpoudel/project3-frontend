@@ -12,13 +12,13 @@
 .home-h1 {
     background-color: rgb(224, 54, 54);
     color:white;
-    border: 3px groove rgb(177, 226, 78);
+    border: 3px groove #262626;
 }
 
 
 .home-intro{
-    background-color: teal;
+    background-color: #1F64B6;
     color: white;
-    border: 5px groove black;
+    border: 5px groove #262626;
     font-size: 20px;
 }
