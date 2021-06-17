@@ -23,6 +23,7 @@ class Login extends Component {
     }
 
     handleSubmit = (event) => {
+        console.log("I login lol")
         event.preventDefault()
         axios.post("http://localhost:3001/auth/login", this.state.data)
         .then(resp => {

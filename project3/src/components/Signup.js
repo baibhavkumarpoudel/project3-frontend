@@ -27,7 +27,8 @@ class Signup extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post("http://localhost:3000/auth/signup", this.state.data)
+        console.log("I push a button lol")
+        axios.post("http://localhost:3001/auth/signup", this.state.data)
         .then(resp => {
             console.log("Team Created")
             console.log(resp)
@@ -39,6 +40,7 @@ class Signup extends Component {
     }
 
     render() {
+        console.log(this.state.data)
         return (
             <div>
                 <h1>Sign Up</h1>
