@@ -15,7 +15,7 @@ class Player extends Component {
     }
 
     componentDidMount = () => {
-        axios.get(`http://localhost:3000/player/${this.props.match.params.id}`)
+        axios.get(`http://localhost:3001/player/${this.props.match.params.id}`)
         .then(resp => {
             this.setState({  
                 player: resp.data
@@ -33,7 +33,7 @@ class Player extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.put(`http://localhost:3000/player/${this.props.match.params.id}`, this.state.player)
+        axios.put(`http://localhost:3001/player/${this.props.match.params.id}`, this.state.player)
         .then(response => {
             console.log("Editing Player")
         })
@@ -41,7 +41,7 @@ class Player extends Component {
 
     handleDelete = (event) => {
         event.preventDefault()
-        axios.delete(`http://localhost:3000/player/${this.props.match.params.id}`)
+        axios.delete(`http://localhost:3001/player/${this.props.match.params.id}`)
         .then((props) => {
             console.log("Deleting Player");
             this.props.history.push(`/profile`)
