@@ -41,6 +41,7 @@ class Signup extends Component {
 
     render() {
         console.log(this.state.data)
+      
         return (
             <div className="signup">
                 <h1 className="signup-h1">Sign Up</h1>
