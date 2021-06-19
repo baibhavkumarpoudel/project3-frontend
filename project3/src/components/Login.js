@@ -39,11 +39,11 @@ class Login extends Component {
     render() {
         console.log(this.props)
         return (
-            <div>
-                <h2>Log In</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleChange} type="text" name="username" placeholder="Username"/>
-                    <input onChange={this.handleChange} type="password" name="password" placeholder="Password"/>
+            <div className="login">
+                <h2 className="login-h2">Log In</h2>
+                <form  className= "login-form"onSubmit={this.handleSubmit}>
+                    <input onChange={this.handleChange} type="text" name="username" placeholder="Username"/> <br></br>
+                    <input onChange={this.handleChange} type="password" name="password" placeholder="Password"/><br></br>
                     <input type="submit" value="Login"/>
                 </form>
             </div>
