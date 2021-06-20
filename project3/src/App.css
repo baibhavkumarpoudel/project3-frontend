@@ -85,3 +85,16 @@
   justify-content: space-evenly;
   background-color: white;
 }
+
+.player {
+  background-color: #1F64B6;
+  background-position:center;
+  background-size:auto;
+  height: 95vh;
+}
+
+.player-header {
+  background-color: rgb(224, 54, 54);
+  color:white;
+  border: 3px groove black;
+}
