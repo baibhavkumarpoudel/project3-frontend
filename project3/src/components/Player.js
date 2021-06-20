@@ -50,9 +50,9 @@ class Player extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Add Player</h1>
-                <form onSubmit={this.handleSubmit}>
+            <div className="player">
+                <h1 className="player-header">Add Player</h1>
+                <form className="player-form" onSubmit={this.handleSubmit}>
                     <input onChange={this.handleChange} type="text" name="name" placeholder="Player Name"/><br></br>
                     <input onChange={this.handleChange} type="text" name="age" placeholder="Age"/><br></br>
                     <input onChange={this.handleChange} type="text" name="position" placeholder="Position"/><br></br>
