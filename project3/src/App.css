@@ -65,3 +65,23 @@
   color:white;
   border: 3px groove rgb(177, 226, 78);
 }
+
+.profile{
+  background-color: #1F64B6;
+  background-position:center;
+  background-size:auto;
+  height: 95vh;
+}
+
+.profile-header {
+  background-color: rgb(224, 54, 54);
+  color:white;
+  border: 3px groove black;
+}
+
+.profile-main {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+}

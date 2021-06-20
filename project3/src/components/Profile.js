@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, {Component} from "react";
 import {Route, Link} from "react-router-dom";
-import Player from './Player';
 
 class Profile extends Component {
     constructor(props){
@@ -9,7 +8,9 @@ class Profile extends Component {
         this.state = {
             team: {},
             data: {
-                name: "Hello"
+                name: "Your Team Name",
+                division: "Your Division",
+                img: "../src/images/home.jpeg"
             }
         }
     }
@@ -27,17 +28,19 @@ class Profile extends Component {
 
     render () {
         console.log(this.state.data)
-        
         const team = this.state.data
         return (
-            <div>
-                <img src="" />
-                <h2>{team.name}</h2>
-                <h3>Division</h3>
+            <div className="profile">
+                <header className="profile-header">
+                    <h2>{team.name}</h2>
+                    <h3>{team.division}</h3>
+                </header>
                 {/* Link to Player Page to add players directly to team signed in on */}
-                <Link to="/player">Add a Player</Link><br></br>
-                <p>Welcome to the Sunday Leagues, the official website for the nationwide phenomenon of Amateur level Soccer Competition.</p>
-                <p>Please sign up with your team and get started!</p>
+                <main className="profile-main">
+                    <img src={team.img} />
+                    <Link to="/player">Add a Player</Link>
+                    <p>This is the list of active players.</p>
+                </main>
             </div>
         )
     }
