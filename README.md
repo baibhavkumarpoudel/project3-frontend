@@ -26,6 +26,10 @@
 - Axios
 - Wireframe 
 
+# Obstacles along the way
+
+-  ERR_SSL_PROTOCOL_ERROR
+
 # Room for Improvement 
 
 - Routes to render page (axios)
